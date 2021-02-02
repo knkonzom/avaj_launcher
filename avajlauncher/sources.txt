@@ -2,12 +2,11 @@
 ./avaj/Tower.java
 ./avaj/Baloon.java
 ./avaj/WeatherProvider.java
-./avaj/Logger.java
 ./avaj/Aircraft.java
 ./avaj/InvalidFileException.java
 ./avaj/JetPlane.java
 ./avaj/AircraftFactory.java
 ./avaj/Coordinates.java
-./avaj/Simulator.java
+./avaj/SimulatorMain.java
 ./avaj/Flyable.java
 ./avaj/Helicopter.java

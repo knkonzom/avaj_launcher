@@ -9,7 +9,7 @@ import java.io.*;
 import java.lang.*;
 import java.util.*;
 
-public class Simulator {
+public class SimulatorMain {
     public static void main(String[] args) throws InvalidFileException {
         
         WeatherTower getTower = new WeatherTower();
