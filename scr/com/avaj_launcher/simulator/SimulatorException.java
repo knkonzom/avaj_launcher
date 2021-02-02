@@ -1,5 +1,6 @@
 package scr.com.avaj_launcher.simulator;
 
+
 public class SimulatorException extends Exception
 {
 	public SimulatorException() {}

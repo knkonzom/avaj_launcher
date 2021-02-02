@@ -1,4 +1,4 @@
-package scr.com.avaj_launcher.input_output;
+package scr.com.avaj_launcher.io;
 
 import java.io.*;
 
@@ -10,7 +10,7 @@ public class Logger
 	{
 		if (Logger.writer != null)
 			Logger.writer.close();
-		Logger.writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename), "utf-8"));
+		Logger.writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename)));
 	}
 
 	public static void log(String message)
@@ -22,7 +22,7 @@ public class Logger
 		}
 		catch (IOException e)
 		{
-			System.out.println("Error while trying to write to the file");
+			System.out.println("Error: File Not Written!");
 			System.exit(1);
 		}
 	}

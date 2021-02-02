@@ -7,38 +7,34 @@ public final class Baloon extends Aircraft implements Flyable
 	protected String actualWeather = null;
 	private WeatherTower weatherTower = null;
 
-	Baloon(String arg_name, Coordinates arg_coordinates)
+	Baloon(String name, Coordinates coordinates)
 	{
-		super(arg_name, arg_coordinates);
+		super(name, coordinates);
 		this.type = "Baloon";
 	}
 
 	public void updateConditions()
 	{
-		if (this.weatherTower == null)
-		{
-			System.out.println("Error 22");
-			return ;
-		}
 		String newWeather = weatherTower.getWeather(coordinates);
 
 		if (actualWeather == null || !actualWeather.equals(newWeather))
 			actualWeather = newWeather;
+
 		if (actualWeather.equals("SUN"))
-			this.log("I have the sun in my eyes, it's not cool");
+			this.log("Sunny skies all around.");
 		else if (actualWeather.equals("SNOW"))
-			this.log("It's snowing, we're gonna crash !");
+			this.log("Oh no it's snowing.");
 		else if (actualWeather.equals("RAIN"))
-			this.log("The experience is a bit ruined. You ever been in a hot air balloon under rain ?!");
+			this.log("Rain will affect how the baloon flies.");
 		else if (actualWeather.equals("FOG"))
-			this.log("There is such a view up there... Too bad i can't see anything....");
+			this.log("It's not safe flying in a fog.");
 		this.orderMove();
 	}
 
-	public void registerTower(WeatherTower arg_weatherTower)
+	public void registerTower(WeatherTower weatherTower)
 	{
-		arg_weatherTower.register(this);
-		this.weatherTower = arg_weatherTower;
+		weatherTower.register(this);
+		this.weatherTower = weatherTower;
 	}
 
 	private void orderMove()
@@ -57,10 +53,7 @@ public final class Baloon extends Aircraft implements Flyable
 
 	protected void land()
 	{
-		this.log("landing. - Coordinates : (" + coordinates.getLongitude() + ", "
-				+ coordinates.getLatitude() + ", "
-				+ coordinates.getHeight()
-				+ ") (lat, long, height).");
-		this.weatherTower.unregister	(this);
+		this.log("Landing - Coordinates : (" + coordinates.getLongitude() + ", " + coordinates.getLatitude() + ", " + coordinates.getHeight() + ") (lat, long, height).");
+		this.weatherTower.unregister(this);
 	}
 }

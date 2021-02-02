@@ -1,8 +1,10 @@
 package scr.com.avaj_launcher.simulator;
 
+
 import java.util.ArrayList;
-import scr.com.avaj_launcher.input_output.Logger;
+
 import scr.com.avaj_launcher.interfaces.Flyable;
+import scr.com.avaj_launcher.io.Logger;
 
 public abstract class Tower {
 	private ArrayList<Flyable> observers = new ArrayList<Flyable>();
@@ -10,13 +12,13 @@ public abstract class Tower {
 	public void register(Flyable flyable)
 	{
 		observers.add(flyable);
-		Logger.log("Tower says: " + flyable.getDescription() + " registered to weather tower.");
+		Logger.log("Tower: " + flyable.getDescription() + " registered to Tower.");
 	}
 
 	public  void unregister(Flyable flyable)
 	{
 		observers.remove(flyable);
-		Logger.log("Tower says: " + flyable.getDescription() + " unregistered from weather tower.");
+		Logger.log("Tower: " + flyable.getDescription() + " unregistered from Tower.");
 	}
 
 	protected void conditionsChanged()

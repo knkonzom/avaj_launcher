@@ -7,38 +7,34 @@ public final class JetPlane extends Aircraft implements Flyable
 	protected String actualWeather = null;
 	private WeatherTower weatherTower = null;
 
-	JetPlane(String arg_name, Coordinates arg_coordinates)
+	JetPlane(String name, Coordinates coordinates)
 	{
-		super(arg_name, arg_coordinates);
+		super(name, coordinates);
 		this.type = "JetPlane";
 	}
 
+	
 	public void updateConditions()
 	{
-		if (this.weatherTower == null)
-		{
-			System.out.println("Error 21");
-			return ;
-		}
 		String newWeather = weatherTower.getWeather(coordinates);
 
 		if (actualWeather == null || !actualWeather.equals(newWeather))
 			actualWeather = newWeather;
 		if (actualWeather.equals("SUN"))
-			this.log("IT'S SUNNY AND I AM GOING FAAAAST WOOOOOOOOOOW !!!!!!!!!!");
+			this.log("Clear skies all around.");
 		else if (actualWeather.equals("SNOW"))
-			this.log("It's beautiful !!!!");
+			this.log("Currently snowing.");
 		else if (actualWeather.equals("RAIN"))
-			this.log("Well i can't see anything because of the rain but i guess it's cool to fly in a JetPlane anyway !");
+			this.log("It's raining now.");
 		else if (actualWeather.equals("FOG"))
-			this.log("Is there something in front of me ? My radar isn't working ! Do i have something to honk ?! Oh yes this ! WOW IT WAS THE EJECTABLE SEAT WOOOOOOW");
+			this.log("It's foggy - limited visibility bad for flying.");
 		this.orderMove();
 	}
 
-	public void registerTower(WeatherTower arg_weatherTower)
+	public void registerTower(WeatherTower weatherTower)
 	{
-		arg_weatherTower.register(this);
-		this.weatherTower = arg_weatherTower;
+		weatherTower.register(this);
+		this.weatherTower = weatherTower;
 	}
 
 	private void orderMove()
@@ -57,10 +53,7 @@ public final class JetPlane extends Aircraft implements Flyable
 
 	protected void land()
 	{
-		this.log("landing. - Coordinates : (" + coordinates.getLongitude() + ", "
-																		+ coordinates.getLatitude() + ", "
-																		+ coordinates.getHeight()
-		+ ") (lat, long, height).");
+		this.log("landing. - Coordinates : (" + coordinates.getLongitude() + ", " + coordinates.getLatitude() + ", " + coordinates.getHeight() + ") (lat, long, height).");
 		this.weatherTower.unregister(this);
 	}
 }
