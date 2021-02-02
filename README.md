@@ -1,6 +1,8 @@
 # avaj_launcher
 
 -- To run project --
+
+
 clone repository, open folder and execute command "sh compile.sh"
 execute "sh run.sh"
 
