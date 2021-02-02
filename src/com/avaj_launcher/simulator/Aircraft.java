@@ -1,6 +1,6 @@
-package scr.com.avaj_launcher.simulator;
+package src.com.avaj_launcher.simulator;
 
-import scr.com.avaj_launcher.io.Logger;
+import src.com.avaj_launcher.io.Logger;
 
 public abstract class Aircraft {
 	protected long id;

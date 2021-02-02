@@ -1,4 +1,4 @@
-package scr.com.avaj_launcher.simulator;
+package src.com.avaj_launcher.simulator;
 
 public class WeatherProvider
 {

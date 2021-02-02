@@ -1,12 +1,12 @@
-package scr.com.avaj_launcher.simulator;
-
-import scr.com.avaj_launcher.interfaces.Flyable;
-import scr.com.avaj_launcher.io.Logger;
+package src.com.avaj_launcher.simulator;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import src.com.avaj_launcher.interfaces.Flyable;
+import src.com.avaj_launcher.io.Logger;
 
 
 public class Simulator {
@@ -19,7 +19,7 @@ public class Simulator {
 		}
 		else
 		{
-			System.out.println("Input file : " + args[0]);
+			System.out.println("\nInput file: " + args[0]);
 		}
 
 		try
@@ -48,7 +48,7 @@ public class Simulator {
 			{
 				throw new SimulatorException("Error: Enter a valid number of simulations");
 			}
-			System.out.println(nbr_simulations + " simulations to run.\n...");
+			System.out.println(nbr_simulations + " simulations successfully ran.");
 
 			String current_line;
 

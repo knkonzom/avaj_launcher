@@ -1,4 +1,4 @@
-package scr.com.avaj_launcher.io;
+package src.com.avaj_launcher.io;
 
 import java.io.*;
 

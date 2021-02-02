@@ -1,7 +1,7 @@
-package scr.com.avaj_launcher.interfaces;
+package src.com.avaj_launcher.interfaces;
 
 
-import scr.com.avaj_launcher.simulator.*;
+import src.com.avaj_launcher.simulator.*;
 
 public interface Flyable {
 	void updateConditions();

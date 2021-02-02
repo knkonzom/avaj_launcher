@@ -1,10 +1,10 @@
-package scr.com.avaj_launcher.simulator;
+package src.com.avaj_launcher.simulator;
 
 
 import java.util.ArrayList;
 
-import scr.com.avaj_launcher.interfaces.Flyable;
-import scr.com.avaj_launcher.io.Logger;
+import src.com.avaj_launcher.interfaces.Flyable;
+import src.com.avaj_launcher.io.Logger;
 
 public abstract class Tower {
 	private ArrayList<Flyable> observers = new ArrayList<Flyable>();
