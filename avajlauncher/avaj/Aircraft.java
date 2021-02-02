@@ -1,20 +1,20 @@
 package avaj;
 
-class Aircraft {
+public class Aircraft {
+    
     protected long id;
     protected String name;
     protected Coordinates coordinates;
-    private static long __idCounter = 1L;
+    private static long idCounter = 1L;
 
     protected Aircraft(String name, Coordinates coordinates) {
         this.name = name;
         this.coordinates = coordinates;
-        id = __idCounter;
-        __idCounter = nextId();
+        this.id = nextId();
     }
 
-    private static long nextId() {
-        return (++__idCounter);
+    private long nextId() {
+        return idCounter++;
     }
 
 }

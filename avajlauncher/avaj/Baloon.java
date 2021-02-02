@@ -1,10 +1,17 @@
 package avaj;
 
+import avaj.WeatherTower;
 
-public class Balloon extends Aircraft implements Flyable {
+public class Baloon extends Aircraft implements Flyable {
+
     private WeatherTower weatherTower = new WeatherTower();
-    Balloon(String name, Coordinates coordinates) {
+
+    Baloon(String name, Coordinates coordinates) {
         super(name, coordinates);
+    }
+
+    public String toString() {
+        return String.format("Tower says: Baloon #%s(%d)",name, id);
     }
 
     public void updateConditions() {
@@ -12,33 +19,31 @@ public class Balloon extends Aircraft implements Flyable {
         switch (weather) {
                 case "SUN": this.coordinates.setLongitude(this.coordinates.getLongitude() + 2);
                             this.coordinates.setHeight(this.coordinates.getHeight() + 4);
-                            Logger.getLogger().logToFile("Balloon #" + this.name + " [" + this.id + "]: SUN");
+                            System.out.println("Balon #" + name + "(" + id +"):" + " This weather is hot!");
                             if (this.coordinates.getHeight() > 100) {
                                 this.coordinates.setHeight(100);
                             }
                             break;
                 case "RAIN": this.coordinates.setHeight(this.coordinates.getHeight() - 5);
-                            Logger.getLogger().logToFile("Balloon #" + this.name + " [" + this.id + "]: RAIN");
+                            System.out.println("Balon #" + name + "(" + id +"):" + " It's currently raining!");
                             break;
                 case "SNOW": this.coordinates.setHeight(this.coordinates.getHeight() - 15);
-                            Logger.getLogger().logToFile("Balloon #" + this.name + " [" + this.id + "]: SNOW");
+                            System.out.println("Balon #" + name + "(" + id +"):" + " Snow makes flying difficult!");                            
                             break;
                 case "FOG": this.coordinates.setHeight(this.coordinates.getHeight() - 2);
-                            Logger.getLogger().logToFile("Balloon #" + this.name + " [" + this.id + "]: FOG");
+                System.out.println("Ballon #" + name + "(" + id +"):" + " Weather is all foggy - terrible for flying!");
                             break;
                 default:
-                            Logger.getLogger().logToFile("Balloon #" + this.name + " [" + this.id + "]: unable to contact Weather Tower.");
+                System.out.println("Ballon #" + name + "(" + id +"):" + " Unable to contact Weather Tower.");
                             break;
         }
         if (this.coordinates.getHeight() <= 0) {
-            Logger.getLogger().logToFile("Balloon #" + this.name + " [" + this.id + "]: landed/no departure.");
-            Logger.getLogger().logToFile("Tower says: Balloon #" + this.name + " [" + this.id + "]" + ": unregistered from Weather Tower.");
+            System.out.println("Ballon #" + name + "(" + id +"):" + " Landing");
             weatherTower.unregister(this);
         }
     }
 
     public void registerTower(WeatherTower weatherTower) {
-        Logger.getLogger().logToFile("Tower says: Balloon #" + this.name + " [" + this.id + "]" + ": registered to Weather Tower.");
-        weatherTower.register(this);
+        this.weatherTower = weatherTower;
     }
 }

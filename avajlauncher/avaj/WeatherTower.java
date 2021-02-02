@@ -1,12 +1,15 @@
 package avaj;
 
+import avaj.Coordinates;
 
 public class WeatherTower extends Tower {
+    WeatherProvider getnewProvider = new WeatherProvider();
+
     public String getWeather(Coordinates coordinates) {
-        return WeatherProvider.getProvider().getCurrentWeather(coordinates);
+        return getnewProvider.getCurrentWeather(coordinates);
     }
 
-    void changeWeather() {
+    public void changeWeather() {
         this.conditionsChanged();
     }
 }

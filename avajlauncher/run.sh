@@ -1,3 +1,3 @@
 find . -name "*.java" > sources.txt
-javac -sourcepath @sources.txt
-java avajlauncher.avaj.simulator scenario.txt
+javac -sourcepath -d @sources.txt
+java Simulator scenario.txt
