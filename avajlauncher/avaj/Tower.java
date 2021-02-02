@@ -1,6 +1,5 @@
 package avaj;
 
-import avaj.Flyable;
 import java.util.*;
 
 public class Tower {

@@ -1,6 +1,5 @@
 package avaj;
 
-import avaj.WeatherTower;
 
 public class JetPlane extends Aircraft implements Flyable {
 

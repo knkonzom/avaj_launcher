@@ -13,7 +13,7 @@ public class Aircraft {
         this.id = nextId();
     }
 
-    private long nextId() {
+    private static long nextId() {
         return idCounter++;
     }
 

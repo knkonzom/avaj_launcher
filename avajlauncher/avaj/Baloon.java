@@ -1,7 +1,5 @@
 package avaj;
 
-import avaj.WeatherTower;
-
 public class Baloon extends Aircraft implements Flyable {
 
     private WeatherTower weatherTower = new WeatherTower();

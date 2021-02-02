@@ -1,6 +1,5 @@
 package avaj;
 
-import avaj.Coordinates;
 
 public class WeatherTower extends Tower {
     WeatherProvider getnewProvider = new WeatherProvider();
