@@ -1,3 +1,2 @@
-find . -name "*.java" > sources.txt
-javac -sourcepath @sources.txt
-java SimulatorMain.java scenario.txt
+#!/bin/sh
+java scr.com.avaj_launcher.simulator.Simulator scenario.txt
