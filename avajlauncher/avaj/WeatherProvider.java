@@ -1,6 +1,5 @@
 package avaj;
 
-import avaj.*;
 import java.util.Random;
 
 public class WeatherProvider {

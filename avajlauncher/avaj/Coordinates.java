@@ -1,6 +1,5 @@
 package avaj;
 
-import avaj.*;
 
 public class Coordinates {
     private int longitude;

@@ -1,6 +1,5 @@
 package avaj;
 
-import avaj.*;
 
 public class Helicopter extends Aircraft implements Flyable {
     private WeatherTower weatherTower = new WeatherTower();

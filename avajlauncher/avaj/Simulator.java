@@ -1,6 +1,5 @@
 package avaj;
 
-import avaj.*;
 import java.io.*;
 import java.lang.*;
 import java.util.*;
